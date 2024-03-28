@@ -9,6 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
+                    <a href="{{ route('cliente.index') }}" class="bg-blue-500 text-white rounded p-2">Lista de clientes.</a>
+                </div>
+                <div class="p-6 text-gray-900">
                     @if (session('msg'))
                         <p class="bg-blue-500 p-2 rounded text-center text-white mb-4">
                             {{ session('msg') }}
