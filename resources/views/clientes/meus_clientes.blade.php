@@ -22,11 +22,24 @@
                                     <td class="p-2">{{ $cliente->nome }}</td>
                                     <td>{{ $cliente->telefone }}</td>
                                     <td>{{ $cliente->email }}</td>
-                                    <td><a href="">Detalhes</a></td>
+                                    <td>
+                                        <a href="{{ route('cliente.show',$cliente) }}">Detalhes</a>
+                                        <a href="{{ route('cliente.meus_clientes',[Auth::user(),$cliente->id]) }}">Detalhes Aqui</a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+                <div class="p-6 text-gray-900">
+                    @if($detalhes_aqui != null)
+                        <h3>Detalhes aqui</h3>
+                        <div>
+                            <p>Nome: <strong>{{ $detalhes_aqui->nome }}</strong></p>
+                            <p>Email: <strong>{{ $detalhes_aqui->email }}</strong></p>
+                            <p>Telefone: <strong>{{ $detalhes_aqui->telefone }}</strong></p>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

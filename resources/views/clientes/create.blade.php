@@ -13,7 +13,7 @@
                         <a href="{{ route('cliente.index') }}" class="bg-blue-500 text-white rounded p-2">Lista de clientes</a>
                     @endcan
 
-                    <a href="{{ route('cliente.meus_clientes',Auth::user()) }}" class="bg-blue-500 text-white rounded p-2">Meus clientes</a>
+                    <a href="{{ route('cliente.meus_clientes',[Auth::user(),0]) }}" class="bg-blue-500 text-white rounded p-2">Meus clientes</a>
                 </div>
                 <div class="p-6 text-gray-900">
                     @if (session('msg'))
