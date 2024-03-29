@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -75,5 +76,14 @@ class ClienteController extends Controller
     public function destroy(Cliente $cliente)
     {
         //
+    }
+
+    public function meus_clientes(User $user)
+    {
+        //$user = User::where('id',$id->id)->first();
+        $clientes = $user->customers()->get();
+        return view('clientes.meus_clientes',[
+            'clientes' => $clientes
+        ]);
     }
 }

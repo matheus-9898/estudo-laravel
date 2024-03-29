@@ -8,11 +8,13 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                @can('level')
-                    <div class="p-6 text-gray-900">
+                <div class="p-6 text-gray-900">
+                    @can('level')
                         <a href="{{ route('cliente.index') }}" class="bg-blue-500 text-white rounded p-2">Lista de clientes</a>
-                    </div>
-                @endcan
+                    @endcan
+
+                    <a href="{{ route('cliente.meus_clientes',Auth::user()) }}" class="bg-blue-500 text-white rounded p-2">Meus clientes</a>
+                </div>
                 <div class="p-6 text-gray-900">
                     @if (session('msg'))
                         <p class="bg-blue-500 p-2 rounded text-center text-white mb-4">
