@@ -23,8 +23,8 @@
                                     <td>{{ $cliente->telefone }}</td>
                                     <td>{{ $cliente->email }}</td>
                                     <td>
-                                        <a href="{{ route('cliente.show',$cliente) }}">Detalhes</a>
-                                        <a href="{{ route('cliente.meus_clientes',[Auth::user(),$cliente->id]) }}">Detalhes Aqui</a>
+                                        <a href="{{ route('cliente.show',$cliente) }}" class="bg-blue-500 text-white rounded p-2">Detalhes</a>
+                                        <a href="{{ route('cliente.meus_clientes',[Auth::user(),$cliente->id]) }}" class="bg-blue-500 text-white rounded p-2">Detalhes Aqui</a>
                                     </td>
                                 </tr>
                             @endforeach
