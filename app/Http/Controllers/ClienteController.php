@@ -81,7 +81,8 @@ class ClienteController extends Controller
      */
     public function destroy(Cliente $cliente)
     {
-        //
+        Cliente::findOrFail($cliente->id)->delete();
+        return redirect()->route('cliente.meus_clientes',[Auth::user(),0])->with('msg','Cliente deletado com sucesso.');
     }
 
     public function meus_clientes(User $user, $id)

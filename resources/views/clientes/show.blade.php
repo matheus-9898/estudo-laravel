@@ -10,7 +10,11 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <a href="{{ route('cliente.edit',$cliente) }}" class="bg-blue-500 text-white rounded p-2">Editar</a>
-                    <a href="" class="bg-red-500 text-white rounded p-2">Deletar</a>
+                    <form action="{{ route('cliente.destroy',$cliente) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="Deletar" class="bg-red-500 text-white rounded p-2">
+                    </form>
                 </div>
                 <div class="p-6 text-gray-900">
                     @if (session('msg'))
